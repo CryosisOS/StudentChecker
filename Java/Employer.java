@@ -1,15 +1,16 @@
 /**
  * Author: Nathan van der Velde
  * Date Created: 2018-03-17
- * Last Modifeid By: --
- * Date Last Modified: --
+ * Last Modifeid By: Nathan van der Velde
+ * Date Last Modified: 2018-03-18
  * Description: This class handles the source code for the Employer Object that will be used in this program.
  */
 
- //IMPORTS
- import java.lang.IllegalArgumentException;
+//IMPORTS
+import java.io.Serializable;
+import java.lang.IllegalArgumentException;
 
-public class Employer
+public class Employer implements Serializable
 {
     /// CLASS FIELDS
     private String _emp_issued_num;
@@ -124,15 +125,9 @@ public class Employer
     public boolean equals(Employer inEmp)
     {
         if(this._emp_issued_num.equals(inEmp.getEmpIssNum()))
-        {
             if(this._emp_name.equals(inEmp.getEmpName()))
-            {
                 if(this._emp_phone.equals(inEmp.getEmpPhone()))
-                {
-                    return true;
-                }//ENDIF
-            }//ENDIF
-        }//ENDIF
+                    return true;//ENDIF
         return false;
     }//END equals
 }//END class Employer

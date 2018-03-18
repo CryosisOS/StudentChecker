@@ -6,7 +6,10 @@
  * Description: This class contains the source code the Units Objects that will be used in this program.
  */
 
-public class Units
+ //IMPORTS
+import java.io.Serializable;
+
+public class Units implements Serializable
 {
     //CLASS CONSTANTS
     private static final int _INITIAL_SIZE = 10;
