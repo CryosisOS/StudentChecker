@@ -6,7 +6,7 @@
  * Description: This class handles sorting a data structure into ascending order.
  */
 
-public class Sorts
+public class Sort
 {
 
 }//END class Sorts

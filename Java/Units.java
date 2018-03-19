@@ -22,7 +22,7 @@ public class Units implements Serializable
     public Units()
     {
         _units = new String[_INITIAL_SIZE];
-        for(int ii=0;ii<units.length;ii++)
+        for(int ii=0;ii<_units.length;ii++)
         {
             _units[ii] = "NULL";
         }//END FOR
@@ -80,7 +80,7 @@ public class Units implements Serializable
     {
         int index = 0;
         String [] temp = inUnits.getUnits();
-        while(this._units[index].equals(temp[ii]))
+        while(this._units[index].equals(temp[index]))
         {
             index++;
         }//END WHILE
