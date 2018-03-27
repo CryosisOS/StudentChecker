@@ -66,7 +66,7 @@ public class Student implements Serializable
      */
     public Student(String [] studentDetails) throws IllegalArgumentException
     {
-        if(studentDetails[7].length() >= 7 && studentDetails[7].length() <= 13)
+        if(studentDetails[7].length() >= 7 && studentDetails[7].length() <= 13 || studentDetails[7]== "NULL")
         {
             _id = studentDetails[0];                                                                        //index 00
             _surname = studentDetails[1];                                                                   //index 01
@@ -436,5 +436,11 @@ public class Student implements Serializable
                                                                         return true;
         return false;
     }//END equals
+
+
+    public String toString()
+    {
+        return _id;
+    }
 
 }//END class Student

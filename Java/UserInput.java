@@ -24,7 +24,7 @@ public class UserInput
     public static int getInteger(String prompt, int [] parameters)
     {
         /// DECLERATION OF VARIABLES
-        int input=0;
+        int input = 0;
 
         /// DEFINEMENT OF METHOD
         try
@@ -66,9 +66,9 @@ public class UserInput
         do
         {
             out.println(prompt);
-            input = sc.nextLine();
-        }while(!input.equals(" "));
-        sc.close();
+            input = sc.next();
+        }while(input.equals(""));
+        //sc.close();
         return input;
     }//END getString
 
@@ -78,7 +78,7 @@ public class UserInput
     private static int twoParamGetInteger(String prompt, int[] parameters)
     {
         /// DECLERATION OF VARIABLES
-        int input=0;
+        int input = 0;
         int repeatNumber = 0;
         boolean isNotValid = true;
         Scanner sc = new Scanner(System.in);
@@ -92,7 +92,7 @@ public class UserInput
                 out.println(prompt);
                 sc.reset();
                 input = sc.nextInt();
-                while(input < parameters[0] || input > parameters[1])
+                while(input < parameters[0] || input > parameters[2])
                 {
                     out.print("This is not a valid input. Please try again.\n");
                     out.print("\n");
@@ -121,7 +121,7 @@ public class UserInput
     private static int threeParamGetInteger(String prompt, int[] parameters)
     {
         /// DECLERATION OF VARIABLES
-        int input=0;
+        int input = 0;
         int repeatNumber = 0;
         boolean isNotValid = true;
         Scanner sc = new Scanner(System.in);
@@ -135,7 +135,7 @@ public class UserInput
                 out.println(prompt);
                 sc.reset();
                 input = sc.nextInt();
-                while(input < parameters[0] || input > parameters[1] && input != parameters[2])
+                while(input < parameters[0] || input > parameters[2] && input != parameters[2])
                 {
                     out.print("This is not a valid input. Please try again.\n");
                     out.print("\n");

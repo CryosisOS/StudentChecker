@@ -10,6 +10,6 @@ public class run
 {
     public static void main(String [] args)
     {
-    
+        Differentiator differentiator = new Differentiator();
     }//END main
 }//END run

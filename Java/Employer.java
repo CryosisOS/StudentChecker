@@ -36,7 +36,8 @@ public class Employer implements Serializable
      */
     public Employer(String inEmpIssNum, String inEmpName, String inEmpPhone) throws IllegalArgumentException
     {
-        if(inEmpPhone.length() >= 8 && inEmpPhone.length() <= 13)
+        if(inEmpPhone.length() >= 7 && inEmpPhone.length() <= 13
+        || inEmpPhone.equals("NULL") || inEmpPhone.equals("Same As Mobile"))
         {
             _emp_issued_num = inEmpIssNum;
             _emp_name = inEmpName;
@@ -44,7 +45,7 @@ public class Employer implements Serializable
         }
         else
         {
-            throw new IllegalArgumentException("Invalid phone number.");
+            throw new IllegalArgumentException("Invalid phone number." + inEmpPhone);
         }//ENDIF
     }//END inEmpPhone
 
