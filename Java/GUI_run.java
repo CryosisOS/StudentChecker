@@ -1,12 +1,13 @@
 /**
  * Author: Nathan van der Velde
  * Date Created: 2018-03-19
- * Last Modified By: --
- * Date Last Modified: --
+ * Last Modified By: 2018-03-27
+ * Date Last Modified: Nathan van der Velde
  */
 
 //IMPORTS
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class GUI_run extends Application
@@ -23,10 +24,13 @@ public class GUI_run extends Application
     @Override
     public void start(Stage stage)
     {
-        // Set a title for the Stage - Zyosis -> The name of the program
-        stage.setTitle(PROGRAM_TITLE);
-        // Showing the stage
-        stage.show();
+        //Creating the original scene
+        GUI_scene_fileGrabber scene_fileGrabber = new GUI_scene_fileGrabber();
+        //Creating the main scene
+
+        /*These are the last lines of start method */
+        stage.setTitle(PROGRAM_TITLE);// Set a title for the Stage - Zyosis -> The name of the program
+        stage.setScene(scene_fileGrabber.getScene());
+        stage.show();// Showing the stage
     }//END start
-    
 }//END class GUI_run
