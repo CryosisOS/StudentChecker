@@ -24,13 +24,21 @@ public class GUI_run extends Application
     @Override
     public void start(Stage stage)
     {
+        DigitalFile digital_fileOne = new DigitalFile();
+        DigitalFile digital_fileTwo = new DigitalFile();
         //Creating the original scene
-        GUI_scene_fileGrabber scene_fileGrabber = new GUI_scene_fileGrabber();
+        GUI_scene_fileGrabber scene_fileGrabber = new GUI_scene_fileGrabber(digital_fileOne, digital_fileTwo);
         //Creating the main scene
+        GUI_scene_tableView scene_tableView = new GUI_scene_tableView(digital_fileOne, digital_fileTwo);
+
+        //COMMENTED OUT SO I CAN START WORKING ON NEW SCENE
+        /*stage.setScene(scene_fileGrabber.getScene());*/
+        //COMMENTED OUT SO I CAN START WORKING ON NEW SCENE
+
+        stage.setScene(scene_tableView.getScene());
 
         /*These are the last lines of start method */
         stage.setTitle(PROGRAM_TITLE);// Set a title for the Stage - Zyosis -> The name of the program
-        stage.setScene(scene_fileGrabber.getScene());
         stage.show();// Showing the stage
     }//END start
 }//END class GUI_run

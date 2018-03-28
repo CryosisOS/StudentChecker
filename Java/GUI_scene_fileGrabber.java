@@ -1,8 +1,8 @@
 /**
  * Author: Nathan van der Velde
  * Date Created: 2018-03-27
- * Last Modified By: --
- * Date Last Modified: --
+ * Last Modified By: Nathan van der Velde
+ * Date Last Modified: 2018-03-28
  */
 
 //IMPORTS
@@ -25,6 +25,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputControl;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -39,11 +40,8 @@ public class GUI_scene_fileGrabber
     /**
      * DEFAULT CONSTRUCTOR
      */
-    public GUI_scene_fileGrabber()
+    public GUI_scene_fileGrabber(DigitalFile digital_fileOne, DigitalFile digital_fileTwo)
     {
-        //Creating the FileObjects
-        DigitalFile digital_fileOne = new DigitalFile();
-        DigitalFile digital_fileTwo = new DigitalFile();
         //Creating the VBox root
         BorderPane layout = new BorderPane();
         VBox root = new VBox();
@@ -145,28 +143,57 @@ public class GUI_scene_fileGrabber
             {
                 try
                 {
-                    Directory directory_fileOne = new Directory(file_path_one.getChildren().get(1).getAccessibleText());
-                    digital_fileOne.create(directory_fileOne);//returns string from textfield
+                    if(text_nameFilePathOne.getText() != null)
+                    {
+                        Directory directory_fileOne = new Directory(text_nameFilePathOne.getText());
+                        digital_fileOne.create(directory_fileOne);
+                    }
+                    else
+                    {
+                        throw new IllegalArgumentException();
+                    }
                 }//END TRY
                 catch(IllegalArgumentException iaex)
                 {
                     Alert alert = new Alert(AlertType.ERROR, "The directory specified for file one does not exist.\nPlease try again");
-                    alert.setTitle("Error!");
+                    alert.setTitle("Error! File processing");
                     alert.showAndWait();
                     text_nameFilePathOne.setText("");
                 }//END CATCH
+                catch(NullPointerException npex)
+                {
+                    Alert alert = new Alert(AlertType.ERROR, npex.getMessage());
+                    alert.setTitle("Error!");
+                    alert.showAndWait();
+                }//END CATCH
                 try
                 {
-                    Directory directory_fileTwo = new Directory(file_path_two.getChildren().get(1).getAccessibleText());
-                    digital_fileTwo.create(directory_fileTwo);//returns string from textfield
+                    if(text_nameFilePathTwo.getText() != null)
+                    {
+                        Directory directory_fileTwo = new Directory(text_nameFilePathTwo.getText());
+                        digital_fileTwo.create(directory_fileTwo);//returns string from textfield
+                    }
+                    else
+                    {
+                        throw new IllegalArgumentException();
+                    }
                 }//END TRY
                 catch(IllegalArgumentException iaex)
                 {
                     Alert alert = new Alert(AlertType.ERROR, "The directory specified for file two does not exist.\nPlease try again");
-                    alert.setTitle("Error!");
+                    alert.setTitle("Error! File processing");
                     alert.showAndWait();
                     text_nameFilePathOne.setText("");
-                }//END CATCH 
+                }//END CATCH
+                catch(NullPointerException npex)
+                {
+                    Alert alert = new Alert(AlertType.ERROR, npex.getMessage());
+                    alert.setTitle("Error!");
+                    alert.showAndWait();
+                }//END CATCH
+                /*
+                 * Figure out how to go to next Scene
+                 */
             }//END handle
         });//END anonymous class
 
