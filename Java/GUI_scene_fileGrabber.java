@@ -15,11 +15,18 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -35,9 +42,10 @@ public class GUI_scene_fileGrabber
     public GUI_scene_fileGrabber()
     {
         //Creating the FileObjects
-        //DigitalFile fileOne = new DigitalFile();
-        //DigitalFile fileTwo = new DigitalFile();
+        DigitalFile digital_fileOne = new DigitalFile();
+        DigitalFile digital_fileTwo = new DigitalFile();
         //Creating the VBox root
+        BorderPane layout = new BorderPane();
         VBox root = new VBox();
         root.setSpacing(5);
 
@@ -45,15 +53,32 @@ public class GUI_scene_fileGrabber
          * The section where the nav bar is made - one option File <- load, exit,
          */
 
-        HBox navbar = new HBox();
-
-        ChoiceBox choiceBox_file = new ChoiceBox();
-        choiceBox_file.setItems(FXCollections.observableArrayList("File",new Separator(), "Load","Exit"));
-        choiceBox_file.setValue("File");
-        navbar.getChildren().add(choiceBox_file);
+        //Creating the menu bar
+        MenuBar menubar = new MenuBar();
+        //Creating the menu
+        Menu filemenu = new Menu("File");
+        //Creating amd adding items to menu
+        MenuItem menuItem_load = new MenuItem("Load...");
+        filemenu.getItems().add(menuItem_load);
+        /*
+         * NEED TO ADD THE LOAD EventHandler HERE. ONE OF THE LAST THINGS TO IMPLEMENT
+         */
+        filemenu.getItems().add(new SeparatorMenuItem());
+        MenuItem menuItem_exit = new MenuItem("Exit...");
+        menuItem_exit.setOnAction(new EventHandler<ActionEvent>()
+        {
+            @Override
+            public void handle(ActionEvent e)
+            {
+                Platform.exit();
+            }//END Handle
+        });
+        filemenu.getItems().add(menuItem_exit);
         
+        //Assigning the Menus to MenuBar
+        menubar.getMenus().add(filemenu);
+        layout.setTop(menubar);
         //END THIS SECTION
-        root.getChildren().add(navbar);
 
         //Creating the initial message
         Label ini_msg = new Label("Please enter in the file paths to the wanted files.");
@@ -118,22 +143,30 @@ public class GUI_scene_fileGrabber
             @Override
             public void handle(ActionEvent e)
             {
-                //try
-                //{
-                    //fileOne.setFilePath(file_path_one.getChildren().get(1).getAccessibleText());//returns string from textfield
-                //}//END TRY
-                //catch(FileNotFoundException fnfex)
-                //{
-                   //Output message saying file(s) not found try again.
-                //}//END CATCH
-                //try
-                //{
-                    //fileTwo.setFilePath(file_path_two.getChildren().get(1).getAccessibleText());//returns string from textfield
-                //}//END TRY
-                //catch(FileNotFoundException fnfex)
-                //{
-
-                //}//END CATCH 
+                try
+                {
+                    Directory directory_fileOne = new Directory(file_path_one.getChildren().get(1).getAccessibleText());
+                    digital_fileOne.create(directory_fileOne);//returns string from textfield
+                }//END TRY
+                catch(IllegalArgumentException iaex)
+                {
+                    Alert alert = new Alert(AlertType.ERROR, "The directory specified for file one does not exist.\nPlease try again");
+                    alert.setTitle("Error!");
+                    alert.showAndWait();
+                    text_nameFilePathOne.setText("");
+                }//END CATCH
+                try
+                {
+                    Directory directory_fileTwo = new Directory(file_path_two.getChildren().get(1).getAccessibleText());
+                    digital_fileTwo.create(directory_fileTwo);//returns string from textfield
+                }//END TRY
+                catch(IllegalArgumentException iaex)
+                {
+                    Alert alert = new Alert(AlertType.ERROR, "The directory specified for file two does not exist.\nPlease try again");
+                    alert.setTitle("Error!");
+                    alert.showAndWait();
+                    text_nameFilePathOne.setText("");
+                }//END CATCH 
             }//END handle
         });//END anonymous class
 
@@ -158,7 +191,8 @@ public class GUI_scene_fileGrabber
         /**
          * End of creating the button handlers
          */
-        _scene = new Scene(root, 350, 132);// width - height
+        layout.setCenter(root);
+        _scene = new Scene(layout, 350, 165);// width - height
     }//END DEFAULT CONSTRUCTOR
 
     /**
