@@ -6,6 +6,8 @@
  * Description: This class handles all the userInput.
  */
 
+package io.terminal;
+
 //IMPORTS
 import java.lang.IllegalArgumentException;
 import java.util.InputMismatchException;
@@ -160,4 +162,4 @@ public class UserInput
         sc.close();
         return input;
     }//END twoParamGetInteger
-}//END class UserInput
+}//END class io.terminal.UserInput

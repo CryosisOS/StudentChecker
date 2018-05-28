@@ -1,14 +1,23 @@
 /***************
 *Name: Barnabas Madai
-*FileName: Tables.java
+*FileName: entities.internal.Tables.java
 *Purpose: Stores the two tables.
-*Last Modified 28/03/2018
-*BY: Barnabas Madai
+*Last Modified 2018-05-28
+*BY: Nathan van der Velde
 ***************/
+
+package entities.internal;
+
+//IMPORTS
+import algorithms.collections.Sorts;
+import entities.external.Student;
+import io.file.CSVParser;
+
 import java.util.ArrayList;
+
 public class Tables
 {
-    //CSVParser is a classfield as it will 
+    //io.file.CSVParser is a classfield as it will
     //store respective parsing errrors, not yet implemented
     private CSVParser csvParserA;
     private CSVParser csvParserB;
@@ -18,7 +27,7 @@ public class Tables
     //stores each original file, incase needed
     private DigitalFile tableAFile;
     private DigitalFile tableBFile;
-    public Tables(DigitalFile inTableAFile,DigitalFile inTableBFile)
+    public Tables(DigitalFile inTableAFile, DigitalFile inTableBFile)
     {
         tableAFile = inTableAFile;
         tableBFile = inTableBFile;

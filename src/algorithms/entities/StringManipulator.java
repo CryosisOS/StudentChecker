@@ -1,4 +1,6 @@
-//Utilised in CSVParser
+package algorithms.entities;
+
+//Utilised in io.file.CSVParser
 public class StringManipulator
 {
     public static int count(String text,char input)

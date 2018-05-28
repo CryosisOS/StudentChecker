@@ -2,11 +2,16 @@
  * Author: Nathan van der Velde
  * Date Created: 2018-03-27
  * Last Modified By: Nathan van der Velde
- * Date Last Modified: 2018-03-28
+ * Date Last Modified: 2018-05-28
  */
+
+package gui;
 
 //IMPORTS
 import java.io.FileNotFoundException;
+
+import entities.internal.DigitalFile;
+import entities.internal.Directory;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -230,4 +235,4 @@ public class GUI_scene_fileGrabber
     {
         return _scene;
     }//END getScene
-}//END class GUI_scene_fileGrabber
+}//END class gui.GUI_scene_fileGrabber

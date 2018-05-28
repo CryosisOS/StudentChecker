@@ -5,12 +5,16 @@
  * Date Last Modified: --
  * Description: This class handles sorting a data structure into ascending order.
  */
+package algorithms.collections;
+
+//IMPORTS
+import entities.external.Student;
 import java.util.ArrayList;
-import java.util.Collections;
+
 public class Sorts
 {
 
-    //sorting dedicated for ArrayList of Student s.
+    //sorting dedicated for ArrayList of entities.external.Student s.
     public static void sortArrayList(ArrayList inArrayList)
     {
         //
@@ -20,13 +24,13 @@ public class Sorts
             {
                 throw new IllegalArgumentException(
                 "Error in Sorts.\n"+
-                "Item in arrayList is not a Student.");
+                "Item in arrayList is not a entities.external.Student.");
             }
         }
         quickSortRecurse(inArrayList,0,inArrayList.size()-1);
     }
 
-    //utilised by sortArrayList to sort Student s
+    //utilised by sortArrayList to sort entities.external.Student s
     private static void quickSortRecurse(ArrayList A, int leftIdx, int rightIdx)
     {
         int pivotIdx;
@@ -42,7 +46,7 @@ public class Sorts
         
     }//quickSortRecurse()
 
-    //utilised by sortArrayList to sort Student s
+    //utilised by sortArrayList to sort entities.external.Student s
     private static int doPartitioning(
     ArrayList A, int leftIdx, int rightIdx, int pivotIdx)
     {

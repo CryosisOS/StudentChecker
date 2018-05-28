@@ -1,9 +1,12 @@
 /**
  * Name: BArnabas Madai
- * FileName: FileIO.java
+ * FileName: io.file.FileIO.java
  * Description: Reads and writes files.
  */
+package io.file;
+
 import java.io.*;
+
 public class FileIO
 {
     //returns true if directory provided exists

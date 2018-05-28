@@ -5,6 +5,8 @@
  * Date Last Modified: --
  * Description: This class handles reading in the csv files.
  */
+package io.file;
+
 
 public class CSVReader
 {
@@ -15,4 +17,4 @@ public class CSVReader
     {
         
     }//END DEFAULT CONSTRUCTOR
-}//END class CSVReader
+}//END class io.file.CSVReader

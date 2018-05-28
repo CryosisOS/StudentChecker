@@ -1,11 +1,15 @@
 /**
  * Author: Nathan van der Velde
  * Date Created: 2018-03-28
- * Last Modified By: --
- * Date Last Modified: --
+ * Last Modified By: Nathan van der Velde
+ * Date Last Modified: 2018-05-28
  */
 
+package gui;
+
 //IMPORTS
+import entities.internal.DigitalFile;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
 public class GUI_scene_tableView
@@ -33,4 +37,4 @@ public class GUI_scene_tableView
     {
         return _scene;
     }//END getScene
-}//END class GUI_scene_tableView
+}//END class gui.GUI_scene_tableView

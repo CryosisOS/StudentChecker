@@ -1,4 +1,4 @@
-/**
+ /**
  * Author: Nathan van der Velde
  * Date Created: 2018-03-18
  * Last Modified By: --
@@ -6,7 +6,9 @@
  * Description: This class contains the source code the RTO Objects that will be used in this program.
  */
 
- //IMPORTS
+package entities.external;
+
+//IMPORTS
 import java.io.Serializable;
 
 public class Rto implements Serializable
@@ -103,7 +105,7 @@ public class Rto implements Serializable
 
     /**
      * SUBMODULE equals
-     * @param inRto (The Rto Object that is being compared against this one)
+     * @param inRto (The entities.external.Rto Object that is being compared against this one)
      * @return boolean (The value of whether or not the two Objects are equal)
      */
     public boolean equals(Rto inRto)
@@ -114,4 +116,4 @@ public class Rto implements Serializable
                     return true;
         return false;
     }//END equals
-}//END class Rto
+}//END class entities.external.Rto

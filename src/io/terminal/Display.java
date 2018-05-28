@@ -6,7 +6,9 @@
  * Description: This class handles displaying the data to the user in the console version.
  */
 
- public class Display
- {
+package io.terminal;
 
- }//END class Display
+public class Display
+{
+
+}//END class io.terminal.Display

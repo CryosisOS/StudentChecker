@@ -1,10 +1,18 @@
 /*************
  * Name: Barnabas Madai
- * FileName: CSVParser.java
+ * FileName: io.file.CSVParser.java
  * Purpose: Stores a csv file and the  methods to manipulate it.
  *          In more detail. First and foremost, 
  *          verifies if the csv file is in correct syntax.
+ * Last Modified: 2018-05-28
+ * By: Nathan van der Velde
  * **********/
+
+package io.file;
+
+//IMPORTS
+import algorithms.entities.StringManipulator;
+
 public class CSVParser
 {
     //Structured storage of the csv file.
@@ -56,7 +64,7 @@ public class CSVParser
         {
             throw new IllegalArgumentException(
             "Error.\n"+
-            "Index provided in CSVParser.getValues() is too high.");
+            "Index provided in io.file.CSVParser.getValues() is too high.");
         }
         return result;
     }
@@ -147,7 +155,7 @@ public class CSVParser
             {
                 throw new IllegalArgumentException(
                 "Error.\n"+
-                "Index provided in CSVParser is too large.");
+                "Index provided in io.file.CSVParser is too large.");
             }
             return value;
         }

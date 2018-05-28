@@ -1,11 +1,17 @@
 /**************
 *Name: Barnabas Madai
-*File Name: DigitalFile.java
-*Purpose: recieves a Directory object, 
+*File Name: entities.internal.DigitalFile.java
+*Purpose: recieves a entities.internal.Directory object,
 *which it will use to open and read the file found there.
 *Last Modified:28/03/2018
 *BY: Barnabas Madai
 **************/
+
+package entities.internal;
+
+//IMPORTS
+import io.file.FileIO;
+
 public class DigitalFile
 {
     Directory location;
@@ -34,7 +40,7 @@ public class DigitalFile
         {
             throw new IllegalArgumentException(
             "Error.\n"+
-            "DigitalFile already has a location. create a new one.");
+            "entities.internal.DigitalFile already has a location. create a new one.");
         }
     }//END OF CREATE SUBMODULE
 

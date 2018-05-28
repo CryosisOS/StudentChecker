@@ -1,3 +1,5 @@
+import entities.internal.Differentiator;
+
 /**
  * Author: Nathan van der Velde
  * Date Created: 2018-03-17

@@ -1,13 +1,15 @@
 /**
  * Author: Nathan van der Velde
  * Date Created: 2018-03-19
- * Last Modified By: 2018-03-27
+ * Last Modified By: 2018-05-28
  * Date Last Modified: Nathan van der Velde
  */
 
 //IMPORTS
+import entities.internal.DigitalFile;
+import gui.GUI_scene_fileGrabber;
+import gui.GUI_scene_tableView;
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class GUI_run extends Application

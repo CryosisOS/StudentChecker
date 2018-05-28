@@ -3,8 +3,10 @@
  * Date Created: 2018-03-17
  * Last Modified By: Nathan van der Velde
  * Date Last Modified: 2018-03-18
- * Description: This class contains the source code the Student Objects that will be used in this program.
+ * Description: This class contains the source code the entities.external.Student Objects that will be used in this program.
  */
+
+package entities.external;
 
 //IMPORTS
 import java.io.Serializable;
@@ -33,7 +35,7 @@ public class Student implements Serializable
     private String _cards_submitted;            //index 17
     private String _cards_verified;             //index 18
     private String _outstanding_cards;          //index 19
-    private Units _units;                       //index 20 -> n | n = number of Units
+    private Units _units;                       //index 20 -> n | n = number of entities.external.Units
 
     /**
      * DEFAULT CONSTRUCTOR
@@ -84,7 +86,7 @@ public class Student implements Serializable
             _cards_submitted = studentDetails[17];                                                          //index 17
             _cards_verified = studentDetails[18];                                                           //index 18
             _outstanding_cards = studentDetails[19];                                                        //index 19
-            String [] temp = new String[studentDetails.length-20];                                          //index 20 -> n | n = number of Units
+            String [] temp = new String[studentDetails.length-20];                                          //index 20 -> n | n = number of entities.external.Units
             for(int ii=0;ii<temp.length;ii++)
             {
                 temp[ii] = studentDetails[ii+20];
@@ -443,4 +445,4 @@ public class Student implements Serializable
         return _id;
     }
 
-}//END class Student
+}//END class entities.external.Student

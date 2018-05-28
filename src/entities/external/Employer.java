@@ -3,8 +3,10 @@
  * Date Created: 2018-03-17
  * Last Modifeid By: Nathan van der Velde
  * Date Last Modified: 2018-03-18
- * Description: This class handles the source code for the Employer Object that will be used in this program.
+ * Description: This class handles the source code for the entities.external.Employer Object that will be used in this program.
  */
+
+package entities.external;
 
 //IMPORTS
 import java.io.Serializable;
@@ -29,7 +31,7 @@ public class Employer implements Serializable
 
     /**
      * ALTERNATE CONSTRUCTOR
-     * @param inEmpIssNum (Employer issued num)
+     * @param inEmpIssNum (entities.external.Employer issued num)
      * @param inEmpName (Employers name)
      * @param inEmpPhone (Employers phone number)
      * @throws IllegalArgumentException
@@ -131,4 +133,4 @@ public class Employer implements Serializable
                     return true;//ENDIF
         return false;
     }//END equals
-}//END class Employer
+}//END class entities.external.Employer

@@ -1,3 +1,5 @@
+package entities.internal;
+
 import java.io.File;
 public class Directory
 {

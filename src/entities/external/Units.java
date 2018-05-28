@@ -3,10 +3,12 @@
  * Date Created: 2018-03-17
  * Last Modified By: --
  * Date Last Modified: --
- * Description: This class contains the source code the Units Objects that will be used in this program.
+ * Description: This class contains the source code the entities.external.Units Objects that will be used in this program.
  */
 
- //IMPORTS
+package entities.external;
+
+//IMPORTS
 import java.io.Serializable;
 
 public class Units implements Serializable
@@ -90,4 +92,4 @@ public class Units implements Serializable
         }//ENDIF
         return false;
     }//END equals
-}//END class Units
+}//END class entities.external.Units
