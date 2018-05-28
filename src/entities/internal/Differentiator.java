@@ -24,7 +24,7 @@ public class Differentiator
     //stores the tables.
     Tables tables;
     //Detects differences in the tables stored in a entities.internal.Tables object.
-    AnomalyDetector anomalyDetector;
+    //TODO: Figure this out AnomalyDetector anomalyDetector;
     public Differentiator()
     {
         digitalFileA = new DigitalFile(new Directory(UserInput.getString(
@@ -33,6 +33,6 @@ public class Differentiator
         "Provide the directory of the second table.")));
         tables = new Tables(digitalFileA,
         digitalFileB);
-        anomalyDetector = new AnomalyDetector(tables);
+        //TODO: Figure this out anomalyDetector = new AnomalyDetector(tables);
     }//END DEFAULT CONSTRUCTOR
 }//END DIFFERENTIATOR
